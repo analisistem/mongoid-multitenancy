@@ -12,6 +12,7 @@ SimpleCov.start
 
 require 'rspec'
 require 'mongoid'
+require 'request_store'
 require 'mongoid-multitenancy'
 require 'mongoid-rspec'
 

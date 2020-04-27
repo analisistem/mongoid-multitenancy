@@ -9,12 +9,12 @@ module Mongoid
     class << self
       # Set the current tenant. Make it Thread aware
       def current_tenant=(tenant)
-        Thread.current[:current_tenant] = tenant
+        ::RequestStore.store[:current_tenant] = tenant
       end
 
       # Returns the current tenant
       def current_tenant
-        Thread.current[:current_tenant]
+        ::RequestStore.store[:current_tenant]
       end
 
       # Affects a tenant temporary for a block execution
